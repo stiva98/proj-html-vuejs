@@ -14,12 +14,12 @@ export default {
 
 <template>
     <header>
-        <div class="container">
+        <div class="my-container">
             <div class="row align-items-center">
                 <div class="col-3">
                     <img src="../assets/img/MasterStudy-1.svg" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-7 p-0">
                     <ul class="d-flex justify-content-end list-unstyled mb-0">
                         <li>
                             <a href="#">Courses</a>
@@ -42,7 +42,7 @@ export default {
                         </li>
                     </ul>
                 </div>
-                <div class="col-3">
+                <div class="col-2 p-0 text-end">
                     <i class="fa-brands fa-linkedin"></i>
                     <i class="fa-brands fa-instagram"></i>
                     <i class="fa-brands fa-facebook"></i>
@@ -56,6 +56,10 @@ export default {
 <style lang="scss" scoped>
 @use "../assets/scss/partials/variables.scss" as *;
 header {
+    .my-container {
+        max-width: 992px;
+        margin: 0 auto;
+    }
     .row {
         padding: 30px 0;
     }
