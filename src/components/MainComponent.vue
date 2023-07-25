@@ -3,7 +3,7 @@ export default {
     name: "MainComponent",
     data() {
         return {
-            cardsCourses: [
+            cardsNewCourses: [
                 {
                     cardImage: "../src/assets/img/electronic.jpeg",
                     cardTitle: "How to be a DJ? Make Electronic Music",
@@ -11,7 +11,8 @@ export default {
                     cardDifficult: "Advanced",
                     cardDuration: "8 lectures",
                     cardHours: "6 hours",
-                    cardButton: true  
+                    cardButton: true,
+                    cardPrice: "$59" 
                 },
                 {
                     cardImage: "../src/assets/img/nvidia.png",
@@ -20,7 +21,8 @@ export default {
                     cardDifficult: "Advanced",
                     cardDuration: "8 lectures",
                     cardHours: "6 hours",
-                    cardButton: true
+                    cardButton: true,
+                    cardPrice: "$60"
                 },
                 {
                     cardImage: "../src/assets/img/fashion.jpeg",
@@ -29,7 +31,8 @@ export default {
                     cardDifficult: "Advanced",
                     cardDuration: "6 lectures",
                     cardHours: "6 hours",
-                    cardButton: true
+                    cardButton: true,
+                    cardPrice: "$61"
                 },
                 {
                     cardImage: "../src/assets/img/communication.jpeg",
@@ -38,7 +41,8 @@ export default {
                     cardDifficult: "Intermediate",
                     cardDuration: "6 lectures",
                     cardHours: "6 hours",
-                    cardButton: false
+                    cardButton: false,
+                    cardPrice: "$62"
                 },
                 {
                     cardImage: "../src/assets/img/art.jpg",
@@ -47,7 +51,8 @@ export default {
                     cardDifficult: "Intermediate",
                     cardDuration: "6 lectures",
                     cardHours: "6 hours",
-                    cardButton: false
+                    cardButton: false,
+                    cardPrice: "$63"
                 },
                 {
                     cardImage: "../src/assets/img/bicycling.jpeg",
@@ -56,7 +61,30 @@ export default {
                     cardDifficult: "Bicycling",
                     cardDuration: "6 lectures",
                     cardHours: "6 hours",
-                    cardButton: false
+                    cardButton: false,
+                    cardPrice: "$64"
+                },
+            ],
+            cardsCourses: [
+                {
+                    icon: "fa-solid fa-briefcase",
+                    title: "Entrepreneurship",
+                    paragraph: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum debitis vel quis non cupiditate voluptas veritatis voluptatem natus! Error quae veniam corporis fuga et accusamus ipsum nesciunt omnis rerum blanditiis.",
+                },
+                {
+                    icon: "fa-solid fa-rocket",
+                    title: "Accelerated learning",
+                    paragraph: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum debitis vel quis non cupiditate voluptas veritatis voluptatem natus! Error quae veniam corporis fuga et accusamus ipsum nesciunt omnis rerum blanditiis.",
+                },
+                {
+                    icon: "fa-solid fa-thumbs-up",
+                    title: "Productivity",
+                    paragraph: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum debitis vel quis non cupiditate voluptas veritatis voluptatem natus! Error quae veniam corporis fuga et accusamus ipsum nesciunt omnis rerum blanditiis.",
+                },
+                {
+                    icon: "fa-solid fa-gear",
+                    title: "Life coaching",
+                    paragraph: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum debitis vel quis non cupiditate voluptas veritatis voluptatem natus! Error quae veniam corporis fuga et accusamus ipsum nesciunt omnis rerum blanditiis.",
                 },
             ]
         }
@@ -151,7 +179,7 @@ export default {
                     New Courses
                 </h2>
                 <div class="row">
-                    <div class="col-4 pb-5" v-for="(card, cardIndex) in cardsCourses" :key="cardIndex">
+                    <div class="col-4 pb-5" v-for="(card, cardIndex) in cardsNewCourses" :key="cardIndex">
                         <div class="card" style="width: 18rem;">
                             <div class="container-image position-relative">
                                 <img :src="card.cardImage" class="card-img-top" :alt="card.cardParagraph">
@@ -159,7 +187,7 @@ export default {
                                     SPECIAL
                                 </button>
                                 <div class="price position-absolute h-100 w-100">
-                                    $59
+                                    {{ card.cardPrice }}
                                 </div>
                             </div>
                             <div class="card-body">
@@ -224,18 +252,21 @@ export default {
         </section>
         <section class="fiveth-section">
             <div class="my-container">
+                <h2 class="text-center fw-bold mt-5">
+                    Why my Courses?
+                </h2>
                 <div class="row">
-                    <div class="col-6 mt-5 border-cards">
+                    <div class="col-5 mt-5 border-cards" v-for="(course, courseIndex) in cardsCourses" :key="courseIndex">
                         <div class="d-flex">
                             <div class="col-3">
-                                icona
+                                <i :class="course.icon"></i>
                             </div>
                             <div class="col-9">
-                                <h4>
-                                    titolo
+                                <h4 class="fw-bold">
+                                    {{ course.title}}
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit vel ullam dolore quas id illum explicabo rem nemo facilis omnis mollitia commodi animi nobis necessitatibus, autem nam et exercitationem sunt nihil earum praesentium officia obcaecati, tempore excepturi. Ut fugit fuga, laudantium architecto magnam, quasi consequatur veritatis sunt assumenda, voluptas pariatur.
+                                    {{ course.paragraph }}
                                 </p>
                             </div>
                         </div>
@@ -396,11 +427,27 @@ main {
             max-width: 992px;
             margin: 0 auto;
         }
-        .col-6 {
+        .col-5 {
             box-shadow: 2px 2px 10px 10px $colorTextCard;
+            padding: 30px 15px;
+            margin-right: 80px;
+        }
+        .col-5:hover {
+            background-color: $divAndFooterBg;
+        }
+        .col-5:hover i {
+            color: white;
         }
         .border-cards {
             border-left: 5px solid $divAndFooterBg;
+        }
+        .col-3 > i {
+            font-size: 70px;
+            color: $divAndFooterBg;
+        }
+        .col-9 > p {
+            font-size: small;
+            color: $colorTextCard;
         }
     }
 }
