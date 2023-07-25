@@ -283,6 +283,64 @@ export default {
                 </div>
             </div>
         </section>
+        <section class="sixth-section">
+            <div class="my-container h-100">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-3 text-white d-flex">
+                        <div class="col-4 text-white">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <div class="col-8 text-white">
+                            <p>
+                                3195
+                            </p>
+                            <p>
+                                Online learner
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-3 text-white d-flex">
+                        <div class="col-4 text-white">
+                            <i class="fa-solid fa-film"></i>
+                        </div>
+                        <div class="col-8 text-white">
+                            <p>
+                                23
+                            </p>
+                            <p>
+                                Video courses
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-3 text-white d-flex">
+                        <div class="col-4 text-white">
+                            <i class="fa-regular fa-image"></i>
+                        </div>
+                        <div class="col-8 text-white">
+                            <p>
+                                437
+                            </p>
+                            <p>
+                                Sliders & Images
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-3 text-white d-flex">
+                        <div class="col-4 text-white">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </div>
+                        <div class="col-8 text-white">
+                            <p>
+                                1440
+                            </p>
+                            <p>
+                                Excellent Reviews
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -448,6 +506,20 @@ main {
         .col-9 > p {
             font-size: small;
             color: $colorTextCard;
+        }
+    }
+    .sixth-section {
+        height: 400px;
+        background-image: url(../assets/img/bg-sixth-section.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: 80px;
+        .my-container {
+            max-width: 992px;
+            margin: 0 auto;
+        }
+        * i {
+            font-size: 50px;
         }
     }
 }
