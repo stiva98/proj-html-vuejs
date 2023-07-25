@@ -200,6 +200,28 @@ export default {
                 </div>
             </div>
         </section>
+        <section class="fourth-section">
+            <div class="my-container">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text-center">
+                            <h2>
+                                Get My Exclusive Investing Book just fot $19.50
+                            </h2>
+                            <p class="text-white fst-italic">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet architecto tenetur perspiciatis eos porro adipisci, ad eveniet reprehenderit ipsum omnis.
+                            </p>
+                            <a href="https://www.amazon.it/Master-your-focus-Concentration-Productivity/dp/B0C2SW3CZY/ref=sr_1_17_sspa?__mk_it_IT=ÅMÅŽÕÑ&crid=3N7BZMOBJBW2&keywords=master+study+book+template&qid=1690298997&sprefix=master+study+book+template%2Caps%2C96&sr=8-17-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1" target="_blank">
+                                <img src="../assets/img/amazon.png" alt="Amazon">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <img src="../assets/img/book.png" alt="Book" class="pt-4">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -314,6 +336,23 @@ main {
         .container-image:hover .price{
             visibility: visible;
             opacity: 1;
+        }
+    }
+    .fourth-section {
+        background-image: url(../assets/img/bg-slider.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        .my-container {
+            max-width: 992px;
+            margin: 0 auto;
+        }
+        .col-5 h2 {
+            color: $divAndFooterBg;
+            font-weight: bold;
+        }
+        .col-5 > div {
+            padding-top: 100px;
         }
     }
 }
