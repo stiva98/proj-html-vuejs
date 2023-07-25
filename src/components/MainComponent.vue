@@ -222,6 +222,36 @@ export default {
                 </div>
             </div>
         </section>
+        <section class="fiveth-section">
+            <div class="my-container">
+                <div class="row">
+                    <div class="col-6 mt-5 border-cards">
+                        <div class="d-flex">
+                            <div class="col-3">
+                                icona
+                            </div>
+                            <div class="col-9">
+                                <h4>
+                                    titolo
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit vel ullam dolore quas id illum explicabo rem nemo facilis omnis mollitia commodi animi nobis necessitatibus, autem nam et exercitationem sunt nihil earum praesentium officia obcaecati, tempore excepturi. Ut fugit fuga, laudantium architecto magnam, quasi consequatur veritatis sunt assumenda, voluptas pariatur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-6">
+                        card
+                    </div>
+                    <div class="col-6">
+                        card
+                    </div>
+                    <div class="col-6">
+                        card
+                    </div> -->
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -289,7 +319,7 @@ main {
         }
         .container-button > button {
             margin: 30px 0 20px 0;
-            background-color: $divAndFooterBg;
+            background-color: #F2B91E;
             padding: 10px;
             border: none;
             font-size: small;
@@ -309,7 +339,7 @@ main {
             margin: 10px;
             font-size: xx-small;
             padding: 5px;
-            background-color: $divAndFooterBg;
+            background-color: #F2B91E;
             border: none;
             z-index: 999;
         }
@@ -337,6 +367,9 @@ main {
             visibility: visible;
             opacity: 1;
         }
+        button:hover {
+            background-color: #D9A61B;
+        }
     }
     .fourth-section {
         background-image: url(../assets/img/bg-slider.jpg);
@@ -353,6 +386,21 @@ main {
         }
         .col-5 > div {
             padding-top: 100px;
+        }
+        a:hover {
+            filter: contrast(0.5);
+        }
+    }
+    .fiveth-section {
+        .my-container {
+            max-width: 992px;
+            margin: 0 auto;
+        }
+        .col-6 {
+            box-shadow: 2px 2px 10px 10px $colorTextCard;
+        }
+        .border-cards {
+            border-left: 5px solid $divAndFooterBg;
         }
     }
 }
