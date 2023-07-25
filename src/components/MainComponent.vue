@@ -19,7 +19,7 @@ export default {
                 <h2 class="fw-bold">
                     Start your human <span>Revolution</span> today
                 </h2>
-                <p>
+                <p class="size">
                     A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which enojoy with my whole heart.
                 </p>
             </div>
@@ -73,6 +73,23 @@ export default {
                 </div>
             </div>
         </section>
+        <section class="second-section">
+            <div class="my-container">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="fw-bold">
+                            Hey there, my name is John Doe. I'm the founder of the Brain Academy.
+                        </h3>
+                        <img src="../assets/img/sign.jpg" alt="Firma John Doe">
+                    </div>
+                    <div class="col-6">
+                        <p>
+                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which i enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquill existence, that i neglect my talents. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable follage of my trees, and but a few stray gleams steal into the inner sanctuary.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -105,10 +122,28 @@ main {
             width: 400px;
             top: 25%;
             left: 45%;
+            
+            .size {
+                font-size: small;
+            }
         }
         .text-white {
             font-size: 50px;
             margin-bottom: 0;
+        }
+    }
+    .second-section {
+        margin-top: 100px;
+        .my-container {
+            max-width: 992px;
+            margin: 0 auto;
+        }
+        .col-6 > img {
+            padding: 20px 0 0 150px;
+        }
+        .col-6 > p {
+            font-size: small;
+            line-height: 25px;
         }
     }
 }
