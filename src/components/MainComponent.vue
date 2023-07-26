@@ -286,7 +286,7 @@ export default {
         <section class="sixth-section">
             <div class="my-container h-100">
                 <div class="row h-100 justify-content-center align-items-center">
-                    <div class="col-3 text-white d-flex">
+                    <div class="col-3 text-white d-flex justify-content-center align-items-center">
                         <div class="col-4 text-white">
                             <i class="fa-solid fa-user-group"></i>
                         </div>
@@ -299,7 +299,7 @@ export default {
                             </p>
                         </div>
                     </div>
-                    <div class="col-3 text-white d-flex">
+                    <div class="col-3 text-white d-flex justify-content-center align-items-center">
                         <div class="col-4 text-white">
                             <i class="fa-solid fa-film"></i>
                         </div>
@@ -312,7 +312,7 @@ export default {
                             </p>
                         </div>
                     </div>
-                    <div class="col-3 text-white d-flex">
+                    <div class="col-3 text-white d-flex justify-content-center align-items-center">
                         <div class="col-4 text-white">
                             <i class="fa-regular fa-image"></i>
                         </div>
@@ -325,7 +325,7 @@ export default {
                             </p>
                         </div>
                     </div>
-                    <div class="col-3 text-white d-flex">
+                    <div class="col-3 text-white d-flex justify-content-center align-items-center">
                         <div class="col-4 text-white">
                             <i class="fa-solid fa-thumbs-up"></i>
                         </div>
@@ -520,6 +520,12 @@ main {
         }
         * i {
             font-size: 50px;
+        }
+        .col-8 > :first-child {
+            color: $divAndFooterBg;
+            font-size: xx-large;
+            margin-bottom: 0;
+            font-weight: bold;
         }
     }
 }
