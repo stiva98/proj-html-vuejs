@@ -369,6 +369,9 @@ main {
             background-color: $button;
             color: white;
         }
+        button:hover {
+            filter: invert(1);
+        }
         .mini-text-h4 {
             color: white;
         }
