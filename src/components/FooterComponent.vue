@@ -91,20 +91,21 @@ export default {
                     <h5>
                         BLOG
                     </h5>
-                    <div class="d-flex">
+                    <div class="d-flex my-card">
                         <div class="col-4">
                             <img src="../assets/img/photo-1-footer.jpeg" alt="foto-1">
                         </div>
                         <div class="col-8">
                             <h6 class="fw-bold">
-                                Our main target is to "Developing Yourself as a Leader"
+                                Our main target is to "Developing Yourself <br>
+                                as a Leader"
                             </h6>
-                            <p class="text-last-column">
+                            <p class="text-last-column mb-0">
                                 - August 9, 2018
                             </p>
                         </div>
                     </div>
-                    <div class="d-flex">
+                    <div class="d-flex my-card">
                         <div class="col-4">
                             <img src="../assets/img/photo-2-footer.jpeg" alt="foto-2">
                         </div>
@@ -112,7 +113,7 @@ export default {
                             <h6 class="fw-bold">
                                 Those Other Collage Expense You Aren't Thinking About
                             </h6>
-                            <p class="text-last-column">
+                            <p class="text-last-column mb-0">
                                 - June 3, 2015
                             </p>
                         </div>
@@ -187,6 +188,10 @@ footer {
         .text-last-column:hover {
             color: $colorTextCard;
             cursor: default;
+        }
+        &.my-card:hover {
+            background-color: rgba($color: #ffffff, $alpha: 0.8);
+            cursor: pointer;
         }
     }
 

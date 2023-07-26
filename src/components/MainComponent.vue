@@ -113,7 +113,7 @@ export default {
                             <span class="mini-text-h4">Limited sale:</span> All courses with 55% off
                         </h4>
                         <div class="input-group mb-3 bg-white rounded-pill">
-                            <input type="text" class="form-control bg-transparent border border-0 shadow" placeholder="Enter your email"  aria-describedby="button-addon2">
+                            <input type="text" class="form-control bg-transparent border border-0 my-shadow" placeholder="Enter your email"  aria-describedby="button-addon2">
                             <button class="btn rounded-pill" type="button" id="button-addon2">SUBSCRIPE</button>
                         </div>
                     </div>
@@ -395,7 +395,7 @@ main {
             max-width: 1052px;
             left: 15%;
         }
-        .shadow {
+        .my-shadow {
             box-shadow: none;
         }
         button {
