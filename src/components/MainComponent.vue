@@ -341,6 +341,39 @@ export default {
                 </div>
             </div>
         </section>
+        <section class="seventh-section">
+            <div class="my-container">
+                <div class="text-center positon-relative">
+                    <h2 class="fw-bold">
+                        What Students Says?
+                    </h2>
+                    <div class="container-image">
+                        <button class="position-absolute prev">
+                            <i class="fa-solid fa-arrow-left-long"></i>
+                        </button>
+                        <button class="position-absolute next">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                        <img src="../assets/img/1-person.jpg" alt="persona-1" class="rounded-circle">
+                        <img src="../assets/img/2-person.jpg" alt="persona-2" class="rounded-circle active">
+                        <img src="../assets/img/3-person.jpg" alt="persona-3" class="rounded-circle">
+                        <div class="container-star">
+                            <h6 class="fw-bold">
+                                Paints on the future
+                            </h6>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <p class="text-center">
+                                "The response to your MasterStudy has been really overwhelming! Those who partecipated in the workshop are spreading the word here on campus and the "buzz" is on. The VP of Instruction wants you to come back! Her goal is to have more faculty trained. She also wants to attend a workshop herself. Our President told me MasterStudy needs to be the cornerstone of our success program."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -529,6 +562,52 @@ main {
             font-size: xx-large;
             margin-bottom: 0;
             font-weight: bold;
+        }
+    }
+    .seventh-section {
+        .my-container {
+            max-width: 992px;
+            margin: 0 auto;
+
+            .text-center > h2 {
+                margin: 40px 0;
+            }
+            button {
+                width: 50px;
+                background-color: transparent;
+                border: none;
+                i {
+                    font-size: x-large;
+                }
+            }
+            .prev {
+                left: 320px;
+            }
+            .next {
+                right: 320px;
+            }
+            .container-image {
+                img {
+                    width: 60px;
+                    margin-bottom: 20px;
+                }
+                .active {
+                    width: 120px;
+                    padding: 0 20px;
+                }
+            }
+            .container-star { 
+                width: 300px;
+                margin: 0 auto;
+                
+                i {
+                    color: $divAndFooterBg;
+                }
+                p {
+                    margin: 30px 0;
+                    font-size: small;
+                }
+            }
         }
     }
 }
