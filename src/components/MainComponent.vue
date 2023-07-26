@@ -86,11 +86,16 @@ export default {
                     title: "Life coaching",
                     paragraph: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum debitis vel quis non cupiditate voluptas veritatis voluptatem natus! Error quae veniam corporis fuga et accusamus ipsum nesciunt omnis rerum blanditiis.",
                 },
-            ]
+            ],
+            email: ''
         }
     },
     methods: {
-
+        subscribe() {
+            // console.log(this.email)
+            alert('Complimenti! Registrazione effettutata al corso di MasterStudy');
+            this.email = '';
+        }
     }
 }
 </script>
@@ -112,10 +117,14 @@ export default {
                         <h4 class="fw-bold p-2">
                             <span class="mini-text-h4">Limited sale:</span> All courses with 55% off
                         </h4>
-                        <div class="input-group mb-3 bg-white rounded-pill">
-                            <input type="text" class="form-control bg-transparent border border-0 my-shadow" placeholder="Enter your email"  aria-describedby="button-addon2">
-                            <button class="btn rounded-pill" type="button" id="button-addon2">SUBSCRIPE</button>
-                        </div>
+                        <form @submit.prevent="subscribe()">
+                            <div class="input-group mb-3 bg-white rounded-pill">
+                                <input type="email" class="form-control bg-transparent border border-0 my-shadow" placeholder="Enter your email"  aria-describedby="button-addon2" v-model="email" required>
+                                <button class="btn rounded-pill" type="submit" id="button-addon2">
+                                    SUBSCRIPE
+                                </button>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-6 p-4">
                         <div class="d-flex">
