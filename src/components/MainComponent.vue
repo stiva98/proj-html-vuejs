@@ -87,7 +87,28 @@ export default {
                     paragraph: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum debitis vel quis non cupiditate voluptas veritatis voluptatem natus! Error quae veniam corporis fuga et accusamus ipsum nesciunt omnis rerum blanditiis.",
                 },
             ],
-            email: ''
+            email: '',
+            utentsRecencions: [
+                {
+                    image: "../src/assets/img/1-person.jpg",
+                    title: "Fantastic",
+                    vote: 4,
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi nobis libero quae dolorem odit rem ipsa quos veritatis explicabo possimus."
+                },
+                {
+                    image: "../src/assets/img/2-person.jpg",
+                    title: "Paints on the future",
+                    vote: 5,
+                    text: "The response to your MasterStudy has been really overwhelming! Those who partecipated in the workshop are spreading the word here on campus and the 'buzz' is on. The VP of Instruction wants you to come back! Her goal is to have more faculty trained. She also wants to attend a workshop herself. Our President told me MasterStudy needs to be the cornerstone of our success program."
+                },
+                {
+                    image: "../src/assets/img/3-person.jpg",
+                    title: "Very helpful",
+                    vote: 3,
+                    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. At aperiam ipsam ab obcaecati et unde doloremque autem minima aliquam quisquam, architecto pariatur commodi aspernatur repellat cumque nostrum aut neque fugit doloribus. Laudantium consectetur modi quaerat exercitationem explicabo quidem amet reiciendis!"
+                }
+            ],
+            active: 1,
         }
     },
     methods: {
@@ -95,6 +116,22 @@ export default {
             // console.log(this.email)
             alert('Complimenti! Registrazione effettutata al corso di MasterStudy');
             this.email = '';
+        },
+        prevAndNext(button) {
+            // console.log(button)
+            if(button == 'prev') {
+                if(this.active > 0) {
+                    this.active--
+                }else {
+                    this.active = this.utentsRecencions.length - 1
+                }
+            }else {
+                if(this.active < this.utentsRecencions.length - 1) {
+                    this.active++
+                }else {
+                    this.active = 0
+                }
+            }
         }
     }
 }
@@ -352,33 +389,29 @@ export default {
         </section>
         <section class="seventh-section">
             <div class="my-container">
-                <div class="text-center positon-relative">
+                <div class="text-center">
                     <h2 class="fw-bold">
                         What Students Says?
                     </h2>
-                    <div class="container-image">
-                        <button class="position-absolute prev">
+                    <div class="container-image position-relative">
+                        <button class="position-absolute prev" @click="prevAndNext('prev')">
                             <i class="fa-solid fa-arrow-left-long"></i>
                         </button>
-                        <button class="position-absolute next">
+                        <button class="position-absolute next" @click="prevAndNext('next')">
                             <i class="fa-solid fa-arrow-right-long"></i>
                         </button>
-                        <img src="../assets/img/1-person.jpg" alt="persona-1" class="rounded-circle">
-                        <img src="../assets/img/2-person.jpg" alt="persona-2" class="rounded-circle active">
-                        <img src="../assets/img/3-person.jpg" alt="persona-3" class="rounded-circle">
-                        <div class="container-star">
-                            <h6 class="fw-bold">
-                                Paints on the future
-                            </h6>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <p class="text-center">
-                                "The response to your MasterStudy has been really overwhelming! Those who partecipated in the workshop are spreading the word here on campus and the "buzz" is on. The VP of Instruction wants you to come back! Her goal is to have more faculty trained. She also wants to attend a workshop herself. Our President told me MasterStudy needs to be the cornerstone of our success program."
-                            </p>
-                        </div>
+                        <img :src="utent.image" :alt="utent.title" class="rounded-circle" :class="utentIndex == active ? 'active' : ''" v-for="(utent, utentIndex) in utentsRecencions" :key="utentIndex">
+                        <template v-for="(utent, utentIndex) in utentsRecencions" :key="utentIndex">
+                            <div class="container-star" v-if="utentIndex == active">
+                                <h6 class="fw-bold">
+                                    {{ utent.title }}
+                                </h6>
+                                <i class="fa-solid fa-star" v-for="(star, index) in utent.vote" :key="index"></i>
+                                <p class="text-center">
+                                    "{{ utent.text }}"
+                                </p>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -590,19 +623,22 @@ main {
                 }
             }
             .prev {
-                left: 320px;
+                left: 20%;
+                top: 10%;
             }
             .next {
-                right: 320px;
+                right: 20%;
+                top: 10%;
             }
             .container-image {
+                min-height: 400px;
                 img {
                     width: 60px;
                     margin-bottom: 20px;
-                }
+                    margin: 0 10px 15px;
+                } 
                 .active {
-                    width: 120px;
-                    padding: 0 20px;
+                    width: 100px;
                 }
             }
             .container-star { 
