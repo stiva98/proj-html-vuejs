@@ -72,9 +72,6 @@ header {
             text-decoration: none;
             color: black;
         }
-        a:hover {
-            color: $divAndFooterBg;
-        }
         &::after {
             content: '';
             height: 3px;
@@ -90,6 +87,9 @@ header {
         &:hover::after {
             visibility: visible;
             opacity: 1;
+        }
+        &:hover a {
+            color: $divAndFooterBg;
         }
         span {
             position: absolute;

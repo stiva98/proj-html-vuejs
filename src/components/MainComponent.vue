@@ -530,12 +530,15 @@ main {
             visibility: hidden;
             opacity: 0;
         }
-        .container-image:hover .price{
+        .card:hover .price{
             visibility: visible;
             opacity: 1;
         }
         button:hover {
             background-color: #D9A61B;
+        }
+        .card {
+            cursor: pointer;
         }
     }
     .fourth-section {
